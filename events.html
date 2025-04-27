@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Icon" type="png" href="images/leapIcon.png">
+    <title>Events - Lilly Events and Promotions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        header {
+            position: relative;
+            font-family: 'Poppins', sans-serif;
+            background-color: #00000070;
+            margin: 0;
+            /* padding: 15px 0; */
+            height: 65vh;
+            /* color: #333; */
+            /* display: flex; */
+            /* align-items: center; */
+            /* justify-content: center; */
+            /* text-align: center; */
+            z-index: 1;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("images/event_bck.jpg") no-repeat center center/cover;
+            background-attachment: fixed;
+            opacity: 0.9;
+            /* Adjust this value for desired transparency */
+            z-index: -1;
+        }
+
+        /* comment this section and section::before after adding cards */
+        section {
+            position: relative;
+            font-family: 'Poppins', sans-serif;
+            /* background-color: #00000070; */
+            margin: 0;
+            /* padding: 15px 0; */
+            height: 65vh;
+            /* color: #333; */
+            /* display: flex; */
+            /* align-items: center; */
+            /* justify-content: center; */
+            /* text-align: center; */
+            /* z-index: 1; */
+        }
+        section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("images/events_await.jpg") no-repeat center center/cover;
+            background-attachment: fixed;
+            opacity: 0.7;
+            /* Adjust this value for desired transparency */
+            z-index: -1;
+        }
+
+        /* comment below section h1 after adding cards */
+        section h1{
+
+            padding-top: 130px;
+        }
+
+
+        .hero-text {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            animation: fadeIn 2s ease-in-out;
+            text-align: center;
+
+        }
+
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+
+        /* Events Section */
+        .events {
+            padding: 50px 10%;
+            background: #f8f9fa;
+            text-align: justify;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .events h1 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .event-card h2 {
+            text-align: center;
+
+        }
+
+        .event-card p {
+            padding: 5px;
+        }
+
+        .event-card {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .event-card h2 {
+            font-size: 1.5rem;
+            color: #ff9800;
+        }
+
+        .event-card p {
+            font-size: 1rem;
+            margin: 10px 0;
+            color: #555;
+        }
+
+        /* Countdown Timer */
+        .countdown {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: red;
+            margin-top: 10px;
+        }
+
+        @media screen and (max-width: 768px) {
+
+            header {
+                /* padding: 15px 0; */
+                height: auto;
+                /* color: #333; */
+                /* display: flex; */
+                /* align-items: center; */
+                /* justify-content: center; */
+                /* text-align: center; */
+                z-index: 1;
+            }
+
+            header::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: url("images/event_bck.jpg") no-repeat center center/cover;
+                background-attachment: fixed;
+                opacity: 0.9;
+                /* Adjust this value for desired transparency */
+                z-index: -1;
+            }
+
+            .hero-text {
+                font-size: 2.5rem;
+                font-weight: bold;
+                text-transform: uppercase;
+                animation: fadeIn 2s ease-in-out;
+                text-align: center;
+                display: flex;
+                flex-wrap: wrap;
+                align-content: center;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+                margin: 0px;
+                height: 70vh;
+            }
+
+            .events {
+                padding: 50px 10%;
+                background: #f8f9fa;
+                text-align: justify;
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div id="nav-container"></div>
+        <!-- <nav class="index_nav">
+            <img src="images/logo.jpg" alt="logo">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown">
+                    <a href="#">Services <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="Corporate.html">Corporate</a></li>
+                        <li><a href="Social.html">Social</a></li>
+                        <li><a href="Promotions.html">Promotions</a></li>
+                    </ul>
+                </li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="events.html">Events</a></li>
+            </ul>
+        </nav> -->
+        <h1 class="hero-text">Exciting Events Await!</h1>
+    </header>
+    <section>
+        <!-- <h1 style="text-align: center; font-size: 30px;">Upcoming Events</h1> -->
+        <h1 style="text-align: center; font-size: 30px;">Upcoming Events Soon!</h1>
+
+        <!-- comment above line and uncomment commmented line -->
+
+
+    </section>
+
+    <!-- uncomment below section after adding genuine cards -->
+
+    <!-- <section class="events">
+
+        <div class="event-card">
+            <h2>Job Fair 2025</h2>
+            <p><strong>Date:</strong> March 30, 2025</p>
+            <p><strong>Time:</strong> 13:30 PM</p>
+            <p><strong>Location:</strong> City Convention Center</p>
+            <p><strong>Description:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quae
+                reiciendis officia accusantium numquam, facilis provident laudantium.
+                <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptatem error dignissimos
+                corporis quibusdam porro sint aliquid veritatis!
+            </p>
+            <p class="countdown" id="countdown1"></p>
+        </div>
+
+        <div class="event-card">
+            <h2>Webinar on Career Growth</h2>
+            <p><strong>Date:</strong> April 03, 2025</p>
+            <p><strong>Time:</strong> 10:30 AM</p>
+            <p><strong>Location:</strong> Online (Zoom)</p>
+            <p><strong>Description:</strong> Join our expert panel for career advice and job market insights.</p>
+            <p class="countdown" id="countdown2"></p>
+        </div>
+        <div class="event-card">
+            <h2>Job Fair 2025</h2>
+            <p><strong>Date:</strong> March 27, 2025</p>
+            <p><strong>Time:</strong> 13:30 PM</p>
+            <p><strong>Location:</strong> City Convention Center</p>
+            <p><strong>Description:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quae
+                reiciendis officia accusantium numquam, facilis provident laudantium.
+                <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptatem error dignissimos
+                corporis quibusdam porro sint aliquid veritatis!
+            </p>
+            <p class="countdown" id="countdown3"></p>
+        </div>
+
+        <div class="event-card">
+            <h2>Webinar on Career Growth</h2>
+            <p><strong>Date:</strong> April 10, 2025</p>
+            <p><strong>Time:</strong> 10:30 AM</p>
+            <p><strong>Location:</strong> Online (Zoom)</p>
+            <p><strong>Description:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quae
+                reiciendis officia accusantium numquam, facilis provident laudantium.
+                <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptatem error dignissimos
+                corporis quibusdam porro sint aliquid veritatis!
+            </p>
+            <p class="countdown" id="countdown4"></p>
+        </div>
+        <div class="event-card">
+            <h2>Job Fair 2025</h2>
+            <p><strong>Date:</strong> March 14, 2025</p>
+            <p><strong>Time:</strong> 13:30 PM</p>
+            <p><strong>Location:</strong> City Convention Center</p>
+            <p><strong>Description:</strong> Meet top recruiters and explore career opportunities.</p>
+            <p class="countdown" id="countdown5"></p>
+        </div>
+
+        <div class="event-card">
+            <h2>Webinar on Career Growth</h2>
+            <p><strong>Date:</strong> March 09, 2025</p>
+            <p><strong>Time:</strong> 10:30 AM</p>
+            <p><strong>Location:</strong> Online (Zoom)</p>
+            <p><strong>Description:</strong> Join our expert panel for career advice and job market insights.</p>
+            <p class="countdown" id="countdown6"></p>
+        </div>
+    </section> -->
+
+    <footer>
+        <div class="footer-bg"></div>
+        <div class="footer-container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <div class="footer_img">
+                        <a href="index.html" style="text-align: center; margin-top: 20px; margin-bottom: 4px;">
+                            <img src="images/logo.jpg">
+
+                        </a>
+                        <!-- <h4>BROWN <span>&#174;</span><br>BREAD<br>BAKERY</h4> -->
+                    </div>
+                    <p style="text-align:justify; padding: 0px; font-size: 14px;">Lilly Events and Promotions is your
+                        go-to partner for crafting unforgettable events and impactful promotions. We specialize in
+                        seamless event planning, brand activations, and marketing strategies that leave a lasting
+                        impression.</p>
+                </div>
+                <!-- <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#">MDBootstrap</a></li>
+                        <li><a href="#">MDWordPress</a></li>
+                        <li><a href="#">BrandFlow</a></li>
+                        <li><a href="#">Bootstrap Angular</a></li>
+                    </ul>
+                </div> -->
+                <div class="footer-col">
+                    <h4>Useful Links</h4>
+                    <ul class="usefulLinks">
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/gallery.html">Gallery</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a href="/events.html">Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i><a href="https://maps.app.goo.gl/eUyZm8xWfs3hNUNA9"
+                                target="_blank">R-20, Pratap Complex, Laxmi Nagar, Delhi-110092</a></li>
+                        <li><i class="fas fa-envelope"></i><a
+                                href="https://mail.google.com/mail/?view=cm&fs=1&to=info@lillyevents.in"
+                                target="_blank">info@lillyevents.in</a></li>
+                        <li><i class="fas fa-phone"></i><a href="tel:919871111528">+91 9871 1115 28</a></li>
+                        <li><i class="fas fa-fax"></i><a href="tel:911149148447">+91 1149 1484 47</a></li>
+                        <!-- <li><i class="fas fa-phone"></i> +91 9871 1115 28</li>
+                        <li><i class="fas fa-fax"></i> +91 1149 1484 47</li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p style="padding-left: 0px; padding-right: 0px;">Copyright © Lilly Events and Promotions All Rights
+                    Reserved.</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=100087151166335"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://youtube.com/@lillyevents?si=46jS4haWqmq5e5uK"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/lilly_events_and_promotions?igsh=MTVoNHg1aWZlb3R0dA=="><i
+                            class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- for event timer -->
+    <script>
+        function startCountdown(eventStartDate, eventEndDate, elementId) {
+            let eventStart = new Date(eventStartDate).getTime();
+            let eventEnd = new Date(eventEndDate).getTime();
+
+            function updateCountdown() {
+                let now = new Date().getTime();
+                let countdownElement = document.getElementById(elementId);
+
+                if (now < eventStart) {
+                    // Event not started yet
+                    let timeLeft = eventStart - now;
+                    let days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                    let hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                    let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                    countdownElement.innerHTML = `Starts in ${days} days, ${hours}h ${minutes}m ${seconds}s!`;
+                    countdownElement.style.color = "red";
+                } else if (now >= eventStart && now <= eventEnd) {
+                    // Event is ongoing
+                    countdownElement.innerHTML = "🎉 Event Started!";
+                    countdownElement.style.color = "green";
+                } else {
+                    // Event is over
+                    countdownElement.innerHTML = "Event Over!";
+                    countdownElement.style.color = "gray";
+                }
+            }
+
+            let timer = setInterval(updateCountdown, 1000);
+            updateCountdown(); // Run once immediately
+        }
+
+        // Example: Event starts on March 20, 2025, and ends on March 22, 2025
+
+        //uncomment below after adding genuine events for starting timer
+
+        // startCountdown("March 30, 2025 13:30:00", "March 30, 2025 18:00:00", "countdown1");
+        // startCountdown("April 03, 2025 10:30:00", "April 03, 2025 18:00:00", "countdown2");
+        // startCountdown("March 27, 2025 13:30:00", "March 27, 2025 18:00:00", "countdown3");
+        // startCountdown("April 10, 2025 10:30:00", "April 10, 2025 18:00:00", "countdown4");
+        // startCountdown("March 14, 2025 13:30:00", "March 14, 2025 18:00:00", "countdown5");
+        // startCountdown("March 09, 2025 10:30:00", "March 09, 2025 18:00:00", "countdown6");
+
+
+    </script>
+
+    <!-- for nav menu loading and all -->
+    <script>
+        // Function to load the header when the page width is less than 816px
+        function loadHeader() {
+            const width = window.innerWidth;
+            const headerContainer = document.getElementById("nav-container");
+
+            // Check if the page width is less than 816px
+            if (width < 769) {
+                fetch("mob_menu.html")
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        headerContainer.innerHTML = data;
+                        // After loading the header, attach the event listener
+                        document.querySelector('.menu-toggle').addEventListener('click', function () {
+                            document.querySelector('.dropdown-menu').classList.toggle('active');
+                        });
+                    })
+                    .catch(error => console.error('Error loading header:', error));
+
+            } else {
+                fetch("pc_menu.html")
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        headerContainer.innerHTML = data;
+                    })
+                    .catch(error => console.error('Error loading header:', error));
+            }
+        }
+
+        // Load the header on page load
+        window.onload = loadHeader;
+
+        // Load the header when the window is resized
+        window.onresize = loadHeader;
+
+
+        window.addEventListener("scroll", function () {
+            const nav = document.querySelector("nav");
+            if (window.scrollY > 50) {
+                nav.classList.add("scrolled");
+            } else {
+                nav.classList.remove("scrolled");
+            }
+        });
+
+
+
+        // for swipe function in mobile
+        document.addEventListener("DOMContentLoaded", function () {
+            const galleryItems = document.querySelectorAll(".gallery-item");
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImg = document.getElementById("lightbox-img");
+            const closeBtn = document.querySelector(".close");
+            const prevBtn = document.querySelector(".prev");
+            const nextBtn = document.querySelector(".next");
+
+            let currentIndex = 0;
+            let startX = 0;
+            let endX = 0;
+            const minWidth = 769;
+
+            function updateButtonVisibility() {
+                if (window.innerWidth < minWidth) {
+                    closeBtn.style.display = "none";
+                    // prevBtn.style.display = "none";
+                    // nextBtn.style.display = "none";
+                } else {
+                    closeBtn.style.display = "block";
+                    // prevBtn.style.display = "block";
+                    // nextBtn.style.display = "block";
+                }
+            }
+            updateButtonVisibility();
+            window.addEventListener("resize", updateButtonVisibility);
+        });
+
+
+
+
+    </script>
+
+    <script src="script2.js"></script>
+</body>
+
+</html>

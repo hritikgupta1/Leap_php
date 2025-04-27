@@ -1,0 +1,166 @@
+<style>
+    /* header media queries */
+    @media screen and (max-width: 769px) {
+        
+        html,
+        body {
+            font-family: Arial, sans-serif;
+            width: 100vw;
+            height: auto;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+
+        nav {
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: 0px;
+
+            /* Make the nav transparent over the image */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: transparent;
+            /* Change from white to transparent */
+            box-shadow: none;
+            /* Remove box-shadow initially */
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        /* Change nav background when scrolling */
+        nav.scrolled {
+            background-color: rgba(255, 255, 255, 0.911);
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 100px;
+            height: 50px;
+            /* margin-left: -30px; */
+            /* margin-right: 3px; */
+
+        }
+
+        .logo span {
+            font-size: 20px;
+            font-family: 'Georgia', serif;
+            color: #fe7f32;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-toggle {
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+            margin-right: 40px;
+        }
+
+        .menu-toggle i {
+            color: white;
+            background-color: #2f3e46;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: #2f3e46;
+            border-radius: 5px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            list-style: none;
+            padding: 10px 0;
+            margin: 0;
+            z-index: 999;
+
+            /* below is newly added code */
+
+            position: fixed;
+            top: 60px;
+            /* Adjust to match header height */
+            left: 0;
+            width: 99%;
+            background-color: #283740ad;
+            z-index: 9999;
+            display: none;
+            flex-direction: column;
+            list-style: none;
+            padding: 20px 0;
+            margin: 0;
+            overflow-y: auto;
+            opacity: 1;
+        }
+
+        .dropdown-menu.active {
+            display: block;
+            /* below is newly added code */
+            top: 75px;
+            margin-left: 3px;
+            border-radius: 10px;
+        }
+
+        .dropdown-menu li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .dropdown-menu li a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            display: block;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+
+        /* .dropdown-menu li a:hover {
+            background-color: #ff7f2e;
+        } */
+    }
+</style>
+<nav id="nav-container">
+    <div class="logo">
+        <img src="images/logo.png" alt="Logo">
+        <!-- <span>Brown Bread Bakery</span> -->
+    </div>
+    <div class="navbar">
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+            <ul class="dropdown-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Corporate.html">Corporate</a></li>
+                <li><a href="Social.html">Social</a></li>
+                <li><a href="Promotions.html">Promotions</a></li>
+                <li><a href="Exhibition.html">Exhibitions</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="events.html">Events</a></li>
+            </ul>
+        </div>
+    </div>
+
+</nav>

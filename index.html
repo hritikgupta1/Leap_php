@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Icon" type="png" href="images/leapIcon.png">
+    <title>Home - Lilly Events and Promotions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* slider section styling */
+        /* Slider container */
+        .slider {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            max-width: 100vw;
+            /* height: fit-content; */
+            margin: 0px;
+            overflow: hidden;
+            height: auto;
+            z-index: -1;
+            background-color: #707070fd;
+        }
+
+        /* Slides container */
+        .slides {
+            display: flex;
+            width: 100vw;
+            transition: transform 0.5s ease-in-out;
+            /* height: 100vh; */
+        }
+
+        /* Individual slides */
+        .slide {
+            width: fit-content;
+            box-sizing: border-box;
+            /* height: 100vh; */
+            /* overflow: hidden; */
+
+        }
+
+        /* Images */
+        .slide img {
+            width: 100vw;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: auto;
+            /* Ensure images scale proportionally */
+            /* display: block; */
+            margin: 0px;
+            overflow: hidden;
+        }
+
+        header {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 15px 0;
+            background-color: #ffffff;
+            color: #333;
+            /* background-image: url("images/bckmain1.jpg"); */
+            /* Replace with your image path */
+            /* background-size: cover; */
+            /* Ensures the image covers the entire page */
+            /* background-position: center; */
+            /* Centers the image */
+            /* background-repeat: no-repeat; */
+            /* Prevents repetition */
+            /* background-attachment: fixed; */
+            /* Keeps the image fixed while scrolling */
+            /* overflow: hidden; */
+            height: auto;
+        }
+
+
+        @media screen and (max-width: 768px) {
+
+            header {
+                height: auto;
+                width: 100vw;
+                /* background-attachment: scroll; */
+
+            }
+
+            .slide img {
+                width: 100vw;
+                top: 0;
+                right: 0;
+                left: 0;
+                height: auto;
+                /* Ensure images scale proportionally */
+                display: block;
+                margin: 0px;
+
+                overflow: hidden;
+            }
+        }
+
+        /* @media screen and (min-width: 769px) and (max-width: 842px){
+            .slide img {
+                width: 100vw;
+                top: 0;
+                right: 0;
+                left: 0;
+                height: 70vh;
+                
+                display: block;
+                margin: 0px;
+                
+                overflow: hidden;
+            }
+        } */
+        @media screen and (min-width: 843px) and (max-width: 905px) {
+            .slide img {
+                width: 100vw;
+                top: 0;
+                right: 0;
+                left: 0;
+                height: auto;
+
+                display: block;
+                margin: 0px;
+
+                overflow: hidden;
+            }
+
+
+            .intro_container {
+                background-color: #ff8000;
+                height: auto;
+                width: fit-content;
+                /* margin-right: 80px; */
+                margin-top: 145px;
+                opacity: 0.8;
+            }
+        }
+
+        @media screen and (min-width: 906px) and (max-width: 912px) {
+            .slide img {
+                width: 100vw;
+                top: 0;
+                right: 0;
+                left: 0;
+                height: fit-content;
+
+                display: block;
+                margin: 0px;
+
+                overflow: hidden;
+            }
+
+            .intro_container {
+                background-color: #ff8000;
+                height: auto;
+                width: fit-content;
+                margin-right: 80px;
+                margin-top: 150px;
+                opacity: 0.8;
+            }
+            
+            
+        }
+        
+        @media screen and (min-width: 913px) and (max-width: 998px) {
+            .slide img {
+                width: 100vw;
+                top: 0;
+                right: 0;
+                left: 0;
+                height: auto;
+                
+                display: block;
+                margin: 0px;
+                
+                overflow: hidden;
+            }
+            .intro_container {
+                background-color: #ff8000;
+                height: auto;
+                width: fit-content;
+                margin-right: 80px;
+                margin-top: 200px;
+                opacity: 0.8;
+            }
+
+
+        }
+
+        @media screen and (min-width: 999px) {
+            .slide img {
+                width: 100vw;
+                top: 0;
+                right: 0;
+                left: 0;
+                height: auto;
+
+                display: block;
+                margin: 0px;
+
+                overflow: hidden;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header style="background-color: #00408000; padding: 0px;">
+
+        <div id="nav-container"></div>
+        <!-- <nav class="index_nav">
+            <img src="images/logo.jpg" alt="logo">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown">
+                    <a href="#">Services <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="Corporate.html">Corporate</a></li>
+                        <li><a href="Social.html">Social</a></li>
+                        <li><a href="Promotions.html">Promotions</a></li>
+                    </ul>
+                </li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="events.html">Events</a></li>
+            </ul>
+        </nav> -->
+        <!-- slider section -->
+        <div class="slider">
+            <div class="slides" style="opacity: 0.7;">
+                <div class="slide"><img src="images/slider_img1.jpg" alt="Image 1"></div>
+                <div class="slide"><img src="images/slider_img2.jpeg" alt="Image 2"></div>
+                <div class="slide"><img src="images/slider_img3.jpeg" alt="Image 3"></div>
+                <div class="slide"><img src="images/slider_img4.jpeg" alt="Image 4"></div>
+                <div class="slide"><img src="images/slider_img5.jpeg" alt="Image 5"></div>
+                <div class="slide"><img src="images/slider_img6.jpeg" alt="Image 6"></div>
+                <div class="slide"><img src="images/slider_img7.jpeg" alt="Image 7"></div>
+            </div>
+        </div>
+
+        <!-- slider section ends here -->
+
+    </header>
+    <section class="hero">
+        <div class="dummy_container" style="height: 0px; width: 0px;">
+
+        </div>
+        <div class="intro_container1">
+            <div class="intro_container">
+                <h1 style="color: #ffffff; padding-left: 30px; font-size: 23px;">Who are we?</h1>
+                <p style="color: #ffffff; padding: 0px 30px 30px 30px; text-align: justify;">We strive to provide
+                    the best experience for our customers. Right from the taking briefs to
+                    understand your objectives our team of expert event managers helps you to achieve your goals by
+                    creating a strategic & creative event planning & tangible event production since 2012. We are a
+                    highly trustworthy and famous event planning company and corporate event planners in Pan India.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section2">
+        <div class="ourServices">
+            <h1 style="font-weight: 700; margin-bottom: 11px;">Our Services</h1>
+        </div>
+        <div class="content">
+            <p style="text-align: justify;">“Our mission is to provide exceptional customer service and
+                to achieve, and to create and execute a complete solution
+                that brings your vision into reality using proven strategies,
+                innovative ideas, limitless resources, and professional
+                expertise in the event management and function planning
+                industry. We want to ensure that each of our client has an
+                unforgettable experience with us, as well as a lasting
+                impression on their guests.”</p>
+
+            <!-- <img src="images/sign.png" height="20%" width="40%" alt="sign">
+            <p style="text-decoration: solid; font-weight: bold; margin-left: 15px;">Director</p> -->
+        </div>
+
+    </section>
+    <section class="section3">
+        <!-- <h1>Our Expertise</h1> -->
+        <div class="service-container">
+            <div class="service-box">
+                <img src="images/corporate_img.jpg" alt="Corporate Icon">
+                <h2>CORPORATE</h2>
+                <p>Corporate events, marketing, branding solutions.</p>
+                <a href="Corporate.html" class="btn">View Details</a>
+            </div>
+            <div class="service-box">
+                <img src="images/social_img.jpg" alt="Social Icon">
+                <h2>SOCIAL</h2>
+                <p>Unforgettable events, celebrations, live shows.</p>
+                <a href="Social.html" class="btn">View Details</a>
+            </div>
+            <div class="service-box">
+                <img src="images/promotions_img.jpg" alt="Skill Development Icon">
+                <h2>PROMOTIONS</h2>
+                <p>Promote brand via digital and offline marketing.</p>
+                <a href="Promotions.html" class="btn">View Details</a>
+            </div>
+            <div class="service-box">
+                <img src="images/exhibition_img.jpg" alt="Exhibition Icon">
+                <h2>EXHIBITIONS</h2>
+                <p>Elevate brands through impactful showcases.</p>
+                <a href="Exhibition.html" class="btn">View Details</a>
+            </div>
+        </div>
+    </section>
+    <section class="section4">
+        <h1 class="h1_section4">Our Government Associations</h1>
+
+    </section>
+    <section id="stats-section">
+        <table id="stats-table">
+            <tr>
+                <td data-count="15">0+</td>
+                <td data-count="50">0+</td>
+                <td data-count="2000">0+</td>
+                <td data-count="5000">0+</td>
+            </tr>
+            <tr>
+                <th>Years Of Experience</th>
+                <th>Professional Staff</th>
+                <th>Satisfied Clients</th>
+                <th>Successful Events</th>
+            </tr>
+        </table>
+    </section>
+    <section class="section5">
+        <h1 class="clientele-heading">Our Clients</h1>
+        <div class="clientele-container">
+            <img src="images/mtnl_logo.png" alt="Mtnl">
+            <img src="images/axis_logo.svg" alt="Axis bank">
+            <img src="images/saathi_logo.jpg" alt="saathi_logo">
+            <img src="images/damac_logo.png" alt="Damac_logo">
+            <img src="images/colston_logo.jpg" alt="colston_logo">
+            <img src="images/dishtv_logo.svg" alt="dishtv_logo">
+            <img src="images/mahindra_logo.svg" alt="mahindra_logo">
+            <img src="images/Goldiee_logo.jpg" alt="Goldiee_logo">
+            <img src="images/campus_logo.svg" alt="campus_logo">
+            <img src="images/kfc_logo.svg" alt="kfc_logo">
+            <img src="images/pepsi_logo.svg" alt="pepsi_logo">
+            <img src="images/Patanjali_Logo.svg" alt="Patanjali_Logo">
+            <img src="images/Miraj_Group_Logo.png" alt="Miraj_Group_Logo">
+            <img src="images/daps_logo1.jpg" alt="daps_logo">
+            <img src="images/apollo_logo1.png" alt="apollo_logo">
+            <img src="images/Hyfun_logo.jpg" alt="Hyfun_logo">
+            <img src="images/everest_logo.png" alt="everest_logo">
+            <img src="images/oppo_logo.svg" alt="oppo_logo">
+            <img src="images/centuryPly_logo.jpeg" alt="centuryPly_logo">
+            <img src="images/saur_logo.png" alt="saur_logo">
+            <img src="images/gsk_logo.svg" alt="gsk_logo">
+            <img src="images/ambuja_logo.jpg" alt="ambuja_logo">
+            <img src="images/reliance_logo1.jpg" alt="reliance_logo">
+            <img src="https://publicassets.leverageedu.com/landing-pages-new/logo-dark.svg" alt="Leverage_logo">
+        </div>
+    </section>
+
+
+
+    <footer>
+        <div class="footer-bg"></div>
+        <div class="footer-container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <div class="footer_img">
+                        <a href="index.html" style="text-align: center; margin-top: 20px; margin-bottom: 4px;">
+                            <img src="images/logo.png">
+
+                        </a>
+                        <!-- <h4>BROWN <span>&#174;</span><br>BREAD<br>BAKERY</h4> -->
+                    </div>
+                    <p style="text-align:justify; padding: 0px; font-size: 14px;">Lilly Events and Promotions is your
+                        go-to partner for crafting unforgettable events and impactful promotions. We specialize in
+                        seamless event planning, brand activations, and marketing strategies that leave a lasting
+                        impression.</p>
+                </div>
+                <!-- <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#">MDBootstrap</a></li>
+                        <li><a href="#">MDWordPress</a></li>
+                        <li><a href="#">BrandFlow</a></li>
+                        <li><a href="#">Bootstrap Angular</a></li>
+                    </ul>
+                </div> -->
+                <div class="footer-col">
+                    <h4>Useful Links</h4>
+                    <ul class="usefulLinks">
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/gallery.html">Gallery</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a href="/events.html">Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i><a href="https://maps.app.goo.gl/eUyZm8xWfs3hNUNA9"
+                                target="_blank">R-20, Pratap Complex, Laxmi Nagar, Delhi-110092</a></li>
+                        <li><i class="fas fa-envelope"></i><a
+                                href="https://mail.google.com/mail/?view=cm&fs=1&to=info@lillyevents.in"
+                                target="_blank">info@lillyevents.in</a></li>
+                        <li><i class="fas fa-phone"></i><a href="tel:919871111528">+91 9871 1115 28</a></li>
+                        <li><i class="fas fa-fax"></i><a href="tel:911149148447">+91 1149 1484 47</a></li>
+                        <!-- <li><i class="fas fa-phone"></i> +91 9871 1115 28</li>
+                        <li><i class="fas fa-fax"></i> +91 1149 1484 47</li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p style="padding-left: 0px; padding-right: 0px;">Copyright © Lilly Events and Promotions All Rights
+                    Reserved.</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=100087151166335"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://youtube.com/@lillyevents?si=46jS4haWqmq5e5uK"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/lilly_events_and_promotions?igsh=MTVoNHg1aWZlb3R0dA=="><i
+                            class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Function to load the header when the page width is less than 816px
+        function loadHeader() {
+            const width = window.innerWidth;
+            const headerContainer = document.getElementById("nav-container");
+
+            // Check if the page width is less than 816px
+            if (width < 769) {
+                fetch("mob_menu.html")
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        headerContainer.innerHTML = data;
+                        // After loading the header, attach the event listener
+                        document.querySelector('.menu-toggle').addEventListener('click', function () {
+                            document.querySelector('.dropdown-menu').classList.toggle('active');
+                        });
+                    })
+                    .catch(error => console.error('Error loading header:', error));
+
+            } else {
+                fetch("pc_menu.html")
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        headerContainer.innerHTML = data;
+                    })
+                    .catch(error => console.error('Error loading header:', error));
+            }
+        }
+
+        // Load the header on page load
+        window.onload = loadHeader;
+
+        // Load the header when the window is resized
+        window.onresize = loadHeader;
+
+
+        window.addEventListener("scroll", function () {
+            const nav = document.querySelector("nav");
+            if (window.scrollY > 50) {
+                nav.classList.add("scrolled");
+            } else {
+                nav.classList.remove("scrolled");
+            }
+        });
+
+        // slider script
+        let currentIndex = 0;
+
+        function moveSlide(step) {
+            const slides = document.querySelector('.slides');
+            const totalSlides = document.querySelectorAll('.slide').length;
+
+            // Update the current index
+            currentIndex = (currentIndex + step + totalSlides) % totalSlides;
+
+            // Move slides
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        // Optional: Auto-slide
+        setInterval(() => {
+            moveSlide(1);
+        }, 5000); // Change image every 5 seconds
+
+        // slider script ends here
+
+    </script>
+
+    <script src="script2.js"></script>
+</body>
+
+</html>
